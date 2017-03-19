@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>Foreman templating engine - best practises and future</title>
+  <title>Prezentace ROR1</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <style type="text/css">
     @import url(https://fonts.googleapis.com/css?family=Open+Sans);
@@ -92,6 +92,7 @@ class: center, middle
 
 * Ruby on Rails je gem
 * Na Windows potřebuje Ruby s devkitem (`ruby dk.rb install`)
+* NodeJS pro kompilaci javascriptu [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 * Po instalaci v systému přibudou konzolové příkazy jako `rails` či `rake`
 
 <br>
@@ -153,15 +154,15 @@ první parametr je název tzv. controlleru, další jsou nově vytvářené str�
 1. mapování adresy na controller a akci
 2. provedení akce v controlleru
 3. pokud controller neřekne jinak, vygenerování odpovědi na základě view (pohledu)
-    
+
 ---
 
 # Templaty
 
 * V controlleru se připravují data, která se poté ve view vykreslují.
 * RoR používá ERB templaty pro generování html
-* Ruby kód je mezi tagy <%= %> a <% %>
-* přípona .html.erb
+* Ruby kód je mezi tagy `<%= %>` a `<% %>`
+* přípona `.html.erb`
 * renderování Ruby probíhá na serveru
 
 <br/>
@@ -190,12 +191,12 @@ první parametr je název tzv. controlleru, další jsou nově vytvářené str�
 
 * na každé stránce se často opakují stejné prvky např. menu
 * layout je speciální template s voláním `<%= yield %>`
-* výchozí layout je v app/views/layouts/application.html.erb
+* výchozí layout je v `app/views/layouts/application.html.erb`
 * nadefinujeme si v něm menu pomocí
 
 ```erb
 <div>
-  <%= link_to 'Uvod', welcome_hello_path %> |
+  <%= link_to 'Uvod', welcome_index_path %> |
   <%= link_to 'Verze', welcome_version_path %>
 </div>
 ```
@@ -264,7 +265,7 @@ current_page?(welcome_hello_path)
 ```sh
 rails generate scaffold computer city:string \
   warranty:boolean vendor:string \
-  serial_number:string 
+  serial_number:string
 rake db:migrate
 ```
 
@@ -295,7 +296,7 @@ rake db:migrate
 # Validace
 
 * validace se definují v modelu který chceme validovat
-* lze využít např. na povinná pole, unikátní hodnoty nebo omezenou množinu hodnot 
+* lze využít např. na povinná pole, unikátní hodnoty nebo omezenou množinu hodnot
 * [http://guides.rubyonrails.org/active_record_validations.html](http://guides.rubyonrails.org/active_record_validations.html)
 
 ```ruby
