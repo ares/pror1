@@ -251,7 +251,7 @@ current_page?(welcome_hello_path)
 * data z tabulky jsou přístupné skrz modely app/models
 * model je třída, název se mapuje na název tabulky
 * ORM: instance odpovídají řádku, metody sloupcům
-* model musí dědit z trídy ActiveRecord::Base
+* model musí dědit z trídy ApplicationRecord
 
 ---
 
@@ -275,7 +275,7 @@ rake db:migrate
 
 * v prohlížeči funguje `http://localhost/computers`
 * definice routes pro resource computer
-* vyvořená migrace
+* vytvořená migrace
 * vytvořený model
 * controller se 7 akcemi - modely, flash, @proměnné
 * pohledy, sdílené části v partialech
@@ -337,7 +337,7 @@ validates :serial_number, :uniqueness => true
 # Výchozí stránka
 
 * nastavuje se v `config/routes.rb`
-* `root 'welcome/hello'`
+* `root :controller => 'computers', :action => 'index'`
 * definuje metodu `root_path`
 
 ---
@@ -403,11 +403,11 @@ c.save
 * [http://guides.rubyonrails.org/association_basics.html](http://guides.rubyonrails.org/association_basics.html)
 
 ```rb
-class Computer < ActiveRecord::Base
+class Computer < ApplicationRecord
   belongs_to :operating_system
 end
 
-class OperatingSystem < ActiveRecord::Base
+class OperatingSystem < ApplicationRecord
   has_many :computers
 end
 ```
