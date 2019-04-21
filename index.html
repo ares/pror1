@@ -447,8 +447,8 @@ OperatingSystem.first.computers.sum
 # Přidání dalšího pole
 
 * pořizovací cena
-* celkové pořizovací náklady za daný rok
-* rails console
+* použití integeru a formátování pomocí helperu
+* k čemu se hodí html_safe a h
 
 ---
 
@@ -457,9 +457,9 @@ OperatingSystem.first.computers.sum
 * vestavěné řešení pomocí gemu i18n
 * překlady jsou uložené v yml souboru pod svými klíči
 * v RoR na místě kde chceme mít přeložený string voláme metodu `t('key')` kde key je klíč překladu
-* přklady mohou být v yml zanořeny, poté je klíč složený pomocí teček `'computer.attributes.vendor'`
+* překlady mohou být v yml zanořeny, poté je klíč složený pomocí teček `'computer.attributes.vendor'`
 * každý jazyk má svůj kód
-* přklady se umísťují do `config/locales/$kod.yml`
+* překlady se umísťují do `config/locales/$kod.yml`
 * výchozí jazyk je angličtina - en, čeština má kód cs
 * lokalizace se provádí metodou `l`, např. `l(computer.created_at, :format => :short)`
 
