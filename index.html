@@ -78,13 +78,13 @@ class: center, middle
 
 # Struktura kurzu
 
-* dva dny 8-16
+* dva dny 9-17
 * přestávky dle potřeby, oběd
-* vlastní počítače
+* vlastní počítače - linux
 * jedna aplikace
 * odkazy:
     * Prezentace [https://ares.github.io/pror1/](https://ares.github.io/pror1/)
-    * Ukazková aplikace [https://github.com/ares/ror1](https://github.com/ares/ror1)
+    <!--    * Ukazková aplikace [https://github.com/ares/ror1](https://github.com/ares/ror1) -->
 
 ---
 
@@ -208,7 +208,7 @@ první parametr je název tzv. controlleru, další jsou nově vytvářené str�
 * vlastní CSS můžeme definovat v `app/assets/stylesheets/application.css`
 * RoR podporují další nadstavby jako Sass a Less
 * využijeme již existující knihovnu Bootstrap
-* [https://v4-alpha.getbootstrap.com/](https://v4-alpha.getbootstrap.com/)
+* [https://getbootstrap.com/](https://getbootstrap.com/)
 
 ---
 
@@ -225,7 +225,7 @@ první parametr je název tzv. controlleru, další jsou nově vytvářené str�
 
 # Použití bootstrapu
 
-* Do layoutu vložíme příklad menu [http://v4-alpha.getbootstrap.com/components/navbar/#nav](http://v4-alpha.getbootstrap.com/components/navbar/#nav)
+* Do layoutu vložíme příklad menu [http://getbootstrap.com/docs/4.3/components/navbar/#nav](http://getbootstrap.com/docs/4.3/components/navbar/#nav)
 * Upravíme na dvě položky, odkazy generované pomocí `<%= link_to ... %>`
 * Třídu active nastavíme dynamicky s pomocí
 
@@ -251,7 +251,7 @@ current_page?(welcome_hello_path)
 * data z tabulky jsou přístupné skrz modely app/models
 * model je třída, název se mapuje na název tabulky
 * ORM: instance odpovídají řádku, metody sloupcům
-* model musí dědit z trídy ApplicationRecord
+* model musí dědit z třídy ApplicationRecord
 
 ---
 
@@ -288,8 +288,8 @@ rake db:migrate
 * integrujeme počítače do menu
 * nastylujeme tabulku a formulář pomocí bootstrapu
 * přidáme sloupce created_at a updated_at
-* [http://v4-alpha.getbootstrap.com/content/tables/#examples](http://v4-alpha.getbootstrap.com/content/tables/#examples)
-* [http://v4-alpha.getbootstrap.com/components/forms/#textual-inputs](http://v4-alpha.getbootstrap.com/components/forms/#textual-inputs)
+* [http://getbootstrap.com/docs/4.3/content/tables/#examples](http://getbootstrap.com/docs/4.3/content/tables/#examples)
+* [http://getbootstrap.com/docs/4.3/components/forms/#textual-inputs](http://getbootstrap.com/docs/4.3/components/forms/#textual-inputs)
 
 ---
 
@@ -301,7 +301,7 @@ rake db:migrate
 
 ```ruby
 validates :vendor, :presence => true
-validates :city, :inclusion => ['Olomouc', 'Praha']
+validates :city, :inclusion => ['Pardubice', 'Praha']
 validates :serial_number, :numericality => true
 validates :serial_number, :uniqueness => true
 ```
@@ -320,7 +320,7 @@ validates :serial_number, :uniqueness => true
 
 # Obrázky
 
-* přidáme ikony - [http://glyphicons.com/files/glyphicons_free.zip](http://glyphicons.com/files/glyphicons_free.zip)
+* přidáme ikony - [http://ares.github.io/pror1/glyphicons_free.tar.gz](http://ares.github.io/pror1/glyphicons_free.tar.gz)
 * obrázky se ukládají do `app/assets/images`
 * na zobrazení se použije `image_tag('nazev.png')`
 
@@ -547,6 +547,16 @@ class: center, middle
 
 # Konec
 
+---
+
+# Bonus
+
+* API - jbuilder
+* Stránkování
+* Debug pomocí pry
+* Hosting
+* ActiveJob
+* ActionMailer
 
 </textarea>
 <script src="remark-latest.min.js" type="text/javascript">
