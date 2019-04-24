@@ -387,7 +387,7 @@ c.save
 
 # Druhá tabulka - operační systémy
 
-* vytvoříme scaffold pro model OperatingSystem
+* vytvoříme ručně scaffold pro model OperatingSystem
 * bude mít pouze políčko název
 * políčko bude ve formuláři povinné
 * do menu přidejte odkaz na seznam operačních systémů
@@ -441,6 +441,15 @@ end
 
 OperatingSystem.first.computers.sum
 ```
+
+---
+
+# SQL a N+1 problém
+
+* snadno dochází ke generování mnoha zbytečných SQL dotazů
+* stejné dotazy jsou cachované
+* detekce a upozornění - gem [bullet](https://rubygems.org/gems/bullet/versions/5.0.0)
+* často lze vyřešit pomocí eager loadingu
 
 ---
 
@@ -551,11 +560,17 @@ class: center, middle
 
 # Bonus
 
+* rake db:seed
+* použití modelů v migracích
 * API - jbuilder
 * Stránkování
-* Debug pomocí pry
-* Hosting
+* Debug pomocí pry, pry-remote
+* Testy
+* Rails environment
+* Rake
+* Hosting - passenger, puma, capistrano, heroku, openshift
 * ActiveJob
+* ActiveStorage
 * ActionMailer
 
 </textarea>
